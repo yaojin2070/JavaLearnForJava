@@ -24,3 +24,4 @@ public class ThreadTest {
         System.out.println("Hello, YaoJin");
     }
 }
+
