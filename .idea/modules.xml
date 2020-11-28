@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Java11.iml" filepath="$PROJECT_DIR$/Java11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java9Test.iml" filepath="$PROJECT_DIR$/Java9Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java9Test1/Java9Test1.iml" filepath="$PROJECT_DIR$/Java9Test1/Java9Test1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaNew/JavaNew.iml" filepath="$PROJECT_DIR$/JavaNew/JavaNew.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaSenior.iml" filepath="$PROJECT_DIR$/JavaSenior.iml" />
     </modules>
   </component>
