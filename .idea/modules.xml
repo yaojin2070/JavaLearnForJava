@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/Java9Test1/Java9Test1.iml" filepath="$PROJECT_DIR$/Java9Test1/Java9Test1.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaNew/JavaNew.iml" filepath="$PROJECT_DIR$/JavaNew/JavaNew.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaSenior.iml" filepath="$PROJECT_DIR$/JavaSenior.iml" />
+      <module fileurl="file://$PROJECT_DIR$/connect.iml" filepath="$PROJECT_DIR$/connect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/connectTest/connectTest.iml" filepath="$PROJECT_DIR$/connectTest/connectTest.iml" />
     </modules>
   </component>
 </project>

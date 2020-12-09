@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JavaNew" />
+        <module name="connectTest" />
         <module name="Java9Test1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
-      <module name="Java9Test1" target="11" />
-      <module name="JavaNew" target="11" />
+      <module name="connectTest" target="11" />
+      <module name="Java9Test1" target="1.5" />
+      <module name="JavaNew" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -12,5 +12,4 @@ public class ModuleTest {
     Person yaojin = new Person();
     System.out.println(yaojin);
   }
-
 }
