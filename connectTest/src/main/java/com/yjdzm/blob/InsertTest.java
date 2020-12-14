@@ -44,6 +44,4 @@ public class InsertTest {
       JDBCUtils.closeResource(conn, ps);
     }
   }
-
-
 }
