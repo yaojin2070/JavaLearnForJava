@@ -25,5 +25,11 @@
     <input type="hidden" name="id">
     <input type="submit" value="测试delete">
 </form>
+
+<form action="test2" method="POST">
+    <input name="name">
+    <input name="password" type="password">
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>

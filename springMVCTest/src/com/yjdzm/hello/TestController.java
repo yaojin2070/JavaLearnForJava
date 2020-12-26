@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 
@@ -36,6 +37,11 @@ public class TestController {
   @RequestMapping(value="/test1", method = RequestMethod.DELETE)
   public String deleteTest() {
     System.out.println("DELETE");
+    return "success";
+  }
+  @RequestMapping(value="/test2", method = RequestMethod.POST)
+  public String Test2(@RequestParam(value = "name", required = true) String username, String password) {
+    System.out.println(username);
     return "success";
   }
 }
