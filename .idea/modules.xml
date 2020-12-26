@@ -9,6 +9,8 @@
       <module fileurl="file://$PROJECT_DIR$/JavaSenior.iml" filepath="$PROJECT_DIR$/JavaSenior.iml" />
       <module fileurl="file://$PROJECT_DIR$/connect.iml" filepath="$PROJECT_DIR$/connect.iml" />
       <module fileurl="file://$PROJECT_DIR$/connectTest/connectTest.iml" filepath="$PROJECT_DIR$/connectTest/connectTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tomcat.iml" filepath="$PROJECT_DIR$/tomcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tomcatTest.iml" filepath="$PROJECT_DIR$/tomcatTest.iml" />
     </modules>
   </component>
 </project>
