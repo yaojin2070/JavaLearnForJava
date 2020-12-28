@@ -32,5 +32,9 @@
     <input name="password" type="password">
     <input type="submit" value="提交">
 </form>
+
+<form action="down" method="GET">
+    <input type="submit" value="下载图片">
+</form>
 </body>
 </html>
