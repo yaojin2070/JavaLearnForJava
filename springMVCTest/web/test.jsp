@@ -12,6 +12,7 @@
 </head>
 <body>
 <form action="test1" method="POST">
+    <input name="username">
     <input type="submit" value="测试post">
 </form>
 

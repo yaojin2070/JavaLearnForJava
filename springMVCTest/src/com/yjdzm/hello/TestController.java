@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 
 import java.io.IOException;
 
@@ -23,7 +24,8 @@ public class TestController {
     return "success";
   }
   @RequestMapping(value="/test1", method = RequestMethod.POST)
-  public String postTest() {
+  public String postTest(String username) {
+    System.out.println(username);
     System.out.println("POST");
     return "success";
   }
