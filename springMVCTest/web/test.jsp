@@ -38,9 +38,10 @@
 </form>
 
 <form action="up" method="POST" enctype="multipart/form-data">
-
     <input type="file" name="uploadFile">
     <input type="submit" value="上传图片">
 </form>
+
+<a href="inter">测试拦截</a>
 </body>
 </html>

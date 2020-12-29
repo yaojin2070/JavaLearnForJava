@@ -87,4 +87,10 @@ public class TestController {
     uploadFile.transferTo(file);
     return "success";
   }
+
+  @RequestMapping(value="/inter")
+  public String interTest() {
+    System.out.println("inter");
+    return "success";
+  }
 }

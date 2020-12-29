@@ -18,5 +18,12 @@
         <property name="defaultEncoding" value="UTF-8"></property>
         <property name="maxUploadSize" value="8888888"></property>
     </bean>
+    <mvc:interceptors>
+        <!-- 默认拦截所有 -->
+        <bean class="com.yjdzm.interceptor.FirstInterCeptor"></bean>
+        <bean class="com.yjdzm.interceptor.SecondInterCeptor"></bean>
+        <!-- 此方式需要拦截器类上加上注释Component -->
+<!--        <ref bean="firstInterCeptor"></ref>-->
+    </mvc:interceptors>
 
 </beans>
