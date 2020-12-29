@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.util.UUID;
 
 /**
  * @author YaoJin
@@ -68,5 +70,21 @@ public class TestController {
     HttpStatus statusCode = HttpStatus.OK;
     ResponseEntity<byte[]> entity = new ResponseEntity<>(b, header, statusCode);
     return entity;
+  }
+
+  @RequestMapping(value="/up", method = RequestMethod.POST)
+  public String testUp(String desc, MultipartFile uploadFile, HttpSession session) throws IOException{
+    System.out.println(uploadFile);
+    // 获取上传文件的名称
+    String fileName = uploadFile.getOriginalFilename();
+    System.out.println(fileName);
+    String finalFileName = UUID.randomUUID() + fileName.substring(fileName.lastIndexOf("."));
+    String path = session.getServletContext().getRealPath("img") + File.separator + finalFileName;
+    System.out.println(path);
+    File file = new File(path);
+
+    System.out.println(file);
+    uploadFile.transferTo(file);
+    return "success";
   }
 }
