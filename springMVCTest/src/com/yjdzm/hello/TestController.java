@@ -1,6 +1,8 @@
 package com.yjdzm.hello;
 
 
+import com.yjdzm.bean.User;
+import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.UUID;
@@ -97,6 +100,15 @@ public class TestController {
   @RequestMapping(value="/error", method = RequestMethod.GET)
   public String errorTest() {
     int i = 1 / 0;
+    return "success";
+  }
+
+  @RequestMapping(value="/getbean", method = RequestMethod.GET)
+  public String beanTest(HttpSession session) {
+    ServletContext servletContext = session.getServletContext();
+    ApplicationContext ac = (ApplicationContext)servletContext.getAttribute("ac");
+    User user = ac.getBean("user", User.class);
+    System.out.println(user);
     return "success";
   }
 }

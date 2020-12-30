@@ -46,5 +46,7 @@
 
 
 <a href="error">异常测试</a>
+
+<a href="getbean">测试获取</a>
 </body>
 </html>
