@@ -93,4 +93,10 @@ public class TestController {
     System.out.println("inter");
     return "success";
   }
+
+  @RequestMapping(value="/error", method = RequestMethod.GET)
+  public String errorTest() {
+    int i = 1 / 0;
+    return "success";
+  }
 }

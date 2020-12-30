@@ -25,5 +25,13 @@
         <!-- 此方式需要拦截器类上加上注释Component -->
 <!--        <ref bean="firstInterCeptor"></ref>-->
     </mvc:interceptors>
-
+    <!--错误处理-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!--异常类型,  error为跳转到的对应jsp文件-->
+                <prop key="java.lang.ArithmeticException">error</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

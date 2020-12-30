@@ -43,5 +43,8 @@
 </form>
 
 <a href="inter">测试拦截</a>
+
+
+<a href="error">异常测试</a>
 </body>
 </html>
