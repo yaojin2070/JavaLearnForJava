@@ -3,20 +3,46 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--
+		<properties>:设置或引入资源文件
+		resource:在类路径下访问资源文件
+		url:在网络路径或磁盘路径下访问资源文件
+	 -->
+
+    <properties resource="jdbc.properties" ></properties>
+
+    <settings>
+        <!-- 将下划线映射成驼峰，user_name映射为userName -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--        &lt;!&ndash; 开启延迟加载 &ndash;&gt;-->
+        <!--        <setting name="lazyLoadingEnabled" value="true"/>-->
+        <!--        &lt;!&ndash; 是否查询所有数据 &ndash;&gt;-->
+        <!--        <setting name="aggressiveLazyLoading" value="false"/>-->
+    </settings>
+
+    <typeAliases>
+        <!--
+            为类型设置类型别名
+            type:Java 类型，若只设置type，默认的别名就是类型，且不区分大小写
+         -->
+        <!-- <typeAlias type="com.atguigu.bean.User" alias="u"/> -->
+        <package name="com.yjdzm.bean"/>
+    </typeAliases>
+
     <!-- 数据库连接环境的配置 -->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&amp;serverTimezone=UTC" />
-                <property name="username" value="root" />
-                <property name="password" value="123456" />
+                <property name="driver" value="${jdbc.driver}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
             </dataSource>
         </environment>
     </environments>
     <!-- 引入SQL映射文件,Mapper映射文件 	-->
     <mappers>
-        <mapper resource="BookMapper.xml" />
+        <mapper resource="UserMapper.xml" />
     </mappers>
 </configuration>
