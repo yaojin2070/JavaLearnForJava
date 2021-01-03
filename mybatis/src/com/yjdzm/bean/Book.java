@@ -1,5 +1,7 @@
 package com.yjdzm.bean;
 
+import java.util.List;
+
 /**
  * @author YaoJin
  * @create 2021-01-01 9:28
@@ -9,6 +11,15 @@ public class Book {
   private Integer id;
   private String name;
   private Integer money;
+  private List<User> users;
+
+  public List<User> getUsers() {
+    return users;
+  }
+
+  public void setUsers(List<User> users) {
+    this.users = users;
+  }
 
   public Integer getId() {
     return id;
@@ -40,6 +51,7 @@ public class Book {
             "id=" + id +
             ", name='" + name + '\'' +
             ", money=" + money +
+            ", users=" + users +
             '}';
   }
 }

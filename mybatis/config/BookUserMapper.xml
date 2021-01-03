@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.yjdzm.mapper.BookUserMapper">
+    <!--
+		<resultMap>：自定义映射，处理复杂的表关系
+		<id column="eid" property="eid"/>
+		<id>：设置主键的映射关系，column设置字段名，property设置属性名
+		<result column="ename" property="ename"/>
+		<result>：设置非主键的映射关系，column设置字段名，property设置属性名
+	 -->
+    <resultMap id="userMap" type="User">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="password" property="password"></result>
+        <result column="address" property="address"></result>
+        <result column="phone" property="phone"></result>
+        <!--级联-->
+        <association property="book" javaType="Book">
+            <id column="id" property="id"></id>
+            <!--当联合查询遇到同字段的时候,需要设置别名-->
+            <result column="bname" property="name"></result>
+            <result column="money" property="money"></result>
+        </association>
+    </resultMap>
+
+    <select id="getAllUser" resultMap="userMap">
+        select u.name, b.name bname from user u left join book b on u.bid = b.id
+    </select>
+
+    <resultMap id="userMapStep" type="User">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="password" property="password"></result>
+        <result column="address" property="address"></result>
+        <result column="phone" property="phone"></result>
+        <!--
+			select:分步查询的SQL的id，即接口的全限定名.方法名或namespace.SQL的id
+			column:分步查询的条件，注意：此条件必须是从数据库查询过得
+		 -->
+        <association property="book" select="com.yjdzm.mapper.BookMapper.getBookById" column="bid" />
+    </resultMap>
+
+    <select id="getUserStep" resultMap="userMapStep">
+        select name, bid bid from user where id = #{id}
+    </select>
+
+    <resultMap id="bookMap" type="Book">
+        <id column="id" property="id"></id>
+        <!--当联合查询遇到同字段的时候,需要设置别名-->
+        <result column="bname" property="name"></result>
+        <result column="money" property="money"></result>
+        <!--
+			<collection>:处理一对多和多对多的关系
+			ofType：指集合中的类型，不需要指定javaType
+		 -->
+        <collection property="users" ofType="User">
+            <id column="uid" property="id"></id>
+            <result column="name" property="name"></result>
+            <result column="password" property="password"></result>
+            <result column="address" property="address"></result>
+            <result column="phone" property="phone"></result>
+        </collection>
+    </resultMap>
+
+    <select id="getBookUsersById" resultMap="bookMap">
+        select b.name bname, u.id uid, u.name, u.password, u.address, u.phone from book b left join user u on b.id = u.bid where b.id = #{id}
+    </select>
+</mapper>

@@ -11,6 +11,19 @@ public class User {
   private String password;
   private String address;
   private String phone;
+  private Book book;
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public Book getBook() {
+    return book;
+  }
+
+  public void setBook(Book book) {
+    this.book = book;
+  }
 
   public User(Integer id, String name, String password, String address, String phone) {
     super();
@@ -72,7 +85,8 @@ public class User {
             ", name='" + name + '\'' +
             ", password='" + password + '\'' +
             ", address='" + address + '\'' +
-            ", phoine='" + phone + '\'' +
+            ", phone='" + phone + '\'' +
+            ", book=" + book +
             '}';
   }
 }
