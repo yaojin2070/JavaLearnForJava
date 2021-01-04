@@ -14,10 +14,10 @@
     <settings>
         <!-- 将下划线映射成驼峰，user_name映射为userName -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
-        <!--        &lt;!&ndash; 开启延迟加载 &ndash;&gt;-->
-        <!--        <setting name="lazyLoadingEnabled" value="true"/>-->
+        <!-- 开启延迟加载 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
         <!--        &lt;!&ndash; 是否查询所有数据 &ndash;&gt;-->
-        <!--        <setting name="aggressiveLazyLoading" value="false"/>-->
+                <setting name="aggressiveLazyLoading" value="false"/>
     </settings>
 
     <typeAliases>

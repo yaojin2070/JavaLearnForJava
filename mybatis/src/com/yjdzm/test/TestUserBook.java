@@ -27,10 +27,13 @@ public  void testSelect() throws IOException {
     BookUserMapper mapper = sqlSession.getMapper(BookUserMapper.class);
 //    List<User> list = mapper.getAllUser();
 //    System.out.println(list);
-//      User user  = mapper.getUserStep("6");
+//    User user  = mapper.getUserStep("6");
 //    System.out.println(user.getName());
 //    System.out.println(user.getBook());
-    Book book = mapper.getBookUsersById("1");
-    System.out.println(book);
+//    Book book = mapper.getBookUsersById("1");
+//    System.out.println(book);
+      Book book = mapper.getOnlyBookByBid("1");
+      System.out.println(book.getName());
+//    System.out.println(book);
   }
 }

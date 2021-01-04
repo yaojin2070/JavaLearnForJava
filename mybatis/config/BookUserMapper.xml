@@ -67,6 +67,21 @@
     </resultMap>
 
     <select id="getBookUsersById" resultMap="bookMap">
-        select b.name bname, u.id uid, u.name, u.password, u.address, u.phone from book b left join user u on b.id = u.bid where b.id = #{id}
+        select b.id, b.name bname, u.id uid, u.name, u.password, u.address, u.phone from book b left join user u on b.id = u.bid where b.id = #{id}
+    </select>
+
+    <select id="getUserByBid" resultType="User">
+        select * from user where bid = #{id}
+    </select>
+
+    <resultMap id="bookMapStep" type="Book">
+        <id column="bid" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="money" property="money"></result>
+        <collection property="users" select="com.yjdzm.mapper.BookUserMapper.getUserByBid" column="bid" fetchType="lazy"></collection>
+    </resultMap>
+
+    <select id="getOnlyBookByBid" resultMap="bookMapStep">
+        select b.id bid, b.name, b.money from  book b where id = #{id}
     </select>
 </mapper>

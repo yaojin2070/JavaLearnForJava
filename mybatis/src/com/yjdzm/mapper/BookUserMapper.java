@@ -14,4 +14,6 @@ public interface BookUserMapper {
   List<User> getAllUser();
   User getUserStep(String id);
   Book getBookUsersById(String id);
+  List<User> getUserByBid(String id);
+  Book getOnlyBookByBid(String id);
 }
